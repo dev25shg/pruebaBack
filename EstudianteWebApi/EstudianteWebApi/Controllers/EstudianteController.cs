@@ -1,4 +1,5 @@
 ﻿using DataBase;
+using EstudianteWebApi.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,28 +9,61 @@ namespace EstudianteWebApi.Controllers
     [ApiController]
     public class EstudianteController : ControllerBase
     {
-        private InstitutoContext _context;
 
-        public EstudianteController(InstitutoContext context)
+        private IServiceEstudiante _service;
+
+        public EstudianteController(IServiceEstudiante service)
         {
-            _context = context;
+            _service = service;
         }
 
         [HttpGet]
-        public IEnumerable<Estudiante> Get() => _context.Estudiantes.ToList();
+        public IEnumerable<Estudiante> Get() => _service.Get();
 
         [HttpPost]
         public ActionResult Post([FromBody] Estudiante estu) {
             try
             {
-                _context.Estudiantes.Add(estu);
+                _service.Save(estu);
                 return Ok();
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                return BadRequest(ex.Message);
             }
+        }
+
+        [HttpPut]
+        public IActionResult Put([FromBody] Estudiante estu, int id)
+        {
+            try
+            {
+                _service.Update(id, estu);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+            
+        }
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            try
+            {
+                _service.Delete(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
+
         }
 
 

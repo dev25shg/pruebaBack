@@ -3,6 +3,7 @@ using DataBase;
 using Microsoft.EntityFrameworkCore;
 using Pomelo.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using EstudianteWebApi.Services;
 //using MySQL.Data.EntityFrameworkCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,11 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.AddScoped<IServiceEstudiante, ServicioEstudiante>();
+builder.Services.AddScoped<IServiceMateria, ServicioMateria>();
+builder.Services.AddScoped<IServiceProfesor, ServiceProfesor>();
+builder.Services.AddScoped<IservicioDetalle, ServicioDetalle>();
 
 builder.Services.AddDbContext<InstitutoContext>(options =>
 {    

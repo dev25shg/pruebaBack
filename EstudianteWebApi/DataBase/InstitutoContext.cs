@@ -21,13 +21,7 @@ namespace DataBase
             base.OnModelCreating(modelBuilder);
         }
 
-     /*   protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseMySql(
-                "server=localhost;user=root;port=3306;Connect Timeout=5;",
-                new MySqlServerVersion(new Version(8, 0, 11))
-            );
-        } */
+    
 
 
     }
