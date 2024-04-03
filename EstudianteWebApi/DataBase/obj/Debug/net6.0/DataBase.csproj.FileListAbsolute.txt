@@ -1,0 +1,15 @@
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\bin\Debug\net6.0\DataBase.deps.json
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\bin\Debug\net6.0\DataBase.runtimeconfig.json
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\bin\Debug\net6.0\DataBase.dll
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\bin\Debug\net6.0\DataBase.pdb
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.csproj.AssemblyReference.cache
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.GeneratedMSBuildEditorConfig.editorconfig
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.AssemblyInfoInputs.cache
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.AssemblyInfo.cs
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.csproj.CoreCompileInputs.cache
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.sourcelink.json
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.dll
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\refint\DataBase.dll
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.pdb
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\DataBase.genruntimeconfig.cache
+D:\Proyectos\pruebaBack\EstudianteWebApi\DataBase\obj\Debug\net6.0\ref\DataBase.dll

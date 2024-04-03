@@ -1,0 +1,160 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{5F6A1FB3-BB80-4724-886C-C32F13473ECC}|EstudianteWebApi\\EstudianteWebApi.csproj|d:\\proyectos\\pruebaback\\estudiantewebapi\\estudiantewebapi\\controllers\\estudiantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F6A1FB3-BB80-4724-886C-C32F13473ECC}|EstudianteWebApi\\EstudianteWebApi.csproj|solutionrelative:estudiantewebapi\\controllers\\estudiantecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|d:\\proyectos\\pruebaback\\estudiantewebapi\\database\\institutocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|solutionrelative:database\\institutocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F6A1FB3-BB80-4724-886C-C32F13473ECC}|EstudianteWebApi\\EstudianteWebApi.csproj|d:\\proyectos\\pruebaback\\estudiantewebapi\\estudiantewebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5F6A1FB3-BB80-4724-886C-C32F13473ECC}|EstudianteWebApi\\EstudianteWebApi.csproj|solutionrelative:estudiantewebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5F6A1FB3-BB80-4724-886C-C32F13473ECC}|EstudianteWebApi\\EstudianteWebApi.csproj|d:\\proyectos\\pruebaback\\estudiantewebapi\\estudiantewebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{5F6A1FB3-BB80-4724-886C-C32F13473ECC}|EstudianteWebApi\\EstudianteWebApi.csproj|solutionrelative:estudiantewebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|d:\\proyectos\\pruebaback\\estudiantewebapi\\database\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|solutionrelative:database\\estudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|d:\\proyectos\\pruebaback\\estudiantewebapi\\database\\detalleestudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|solutionrelative:database\\detalleestudiante.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|d:\\proyectos\\pruebaback\\estudiantewebapi\\database\\profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|solutionrelative:database\\profesor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|d:\\proyectos\\pruebaback\\estudiantewebapi\\database\\materia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9676B9F1-8954-4F7F-8411-0FA48FFA8F70}|DataBase\\DataBase.csproj|solutionrelative:database\\materia.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EstudianteController.cs",
+              "DocumentMoniker": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\EstudianteWebApi\\Controllers\\EstudianteController.cs",
+              "RelativeDocumentMoniker": "EstudianteWebApi\\Controllers\\EstudianteController.cs",
+              "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\EstudianteWebApi\\Controllers\\EstudianteController.cs",
+              "RelativeToolTip": "EstudianteWebApi\\Controllers\\EstudianteController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T03:24:59.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\EstudianteWebApi\\Program.cs",
+              "RelativeDocumentMoniker": "EstudianteWebApi\\Program.cs",
+              "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\EstudianteWebApi\\Program.cs",
+              "RelativeToolTip": "EstudianteWebApi\\Program.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T01:10:19.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\EstudianteWebApi\\appsettings.json",
+              "RelativeDocumentMoniker": "EstudianteWebApi\\appsettings.json",
+              "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\EstudianteWebApi\\appsettings.json",
+              "RelativeToolTip": "EstudianteWebApi\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-03T00:34:14.972Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Estudiante.cs",
+              "DocumentMoniker": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\Estudiante.cs",
+              "RelativeDocumentMoniker": "DataBase\\Estudiante.cs",
+              "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\Estudiante.cs",
+              "RelativeToolTip": "DataBase\\Estudiante.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T00:20:16.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DetalleEstudiante.cs",
+              "DocumentMoniker": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\DetalleEstudiante.cs",
+              "RelativeDocumentMoniker": "DataBase\\DetalleEstudiante.cs",
+              "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\DetalleEstudiante.cs",
+              "RelativeToolTip": "DataBase\\DetalleEstudiante.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T00:12:53.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InstitutoContext.cs",
+              "DocumentMoniker": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\InstitutoContext.cs",
+              "RelativeDocumentMoniker": "DataBase\\InstitutoContext.cs",
+              "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\InstitutoContext.cs",
+              "RelativeToolTip": "DataBase\\InstitutoContext.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAxwBUAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T23:42:39.046Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Profesor.cs",
+              "DocumentMoniker": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\Profesor.cs",
+              "RelativeDocumentMoniker": "DataBase\\Profesor.cs",
+              "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\Profesor.cs",
+              "RelativeToolTip": "DataBase\\Profesor.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T23:57:06.087Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Materia.cs",
+              "DocumentMoniker": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\Materia.cs",
+              "RelativeDocumentMoniker": "DataBase\\Materia.cs",
+              "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\DataBase\\Materia.cs",
+              "RelativeToolTip": "DataBase\\Materia.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-03T00:00:47.717Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
