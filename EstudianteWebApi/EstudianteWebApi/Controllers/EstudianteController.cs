@@ -18,6 +18,20 @@ namespace EstudianteWebApi.Controllers
         [HttpGet]
         public IEnumerable<Estudiante> Get() => _context.Estudiantes.ToList();
 
+        [HttpPost]
+        public ActionResult Post([FromBody] Estudiante estu) {
+            try
+            {
+                _context.Estudiantes.Add(estu);
+                return Ok();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
 
     }
 }

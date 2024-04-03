@@ -42,12 +42,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -56,7 +52,7 @@
               "RelativeDocumentMoniker": "EstudianteWebApi\\Controllers\\EstudianteController.cs",
               "ToolTip": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\EstudianteWebApi\\Controllers\\EstudianteController.cs",
               "RelativeToolTip": "EstudianteWebApi\\Controllers\\EstudianteController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABIAAAAwAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAASAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-03T03:24:59.472Z",
               "EditorCaption": ""
@@ -71,8 +67,7 @@
               "RelativeToolTip": "EstudianteWebApi\\Program.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAACsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T01:10:19.569Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T01:10:19.569Z"
             },
             {
               "$type": "Document",
@@ -84,8 +79,7 @@
               "RelativeToolTip": "EstudianteWebApi\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-04-03T00:34:14.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T00:34:14.972Z"
             },
             {
               "$type": "Document",
@@ -97,8 +91,7 @@
               "RelativeToolTip": "DataBase\\Estudiante.cs",
               "ViewState": "AQIAAAYAAAAAAAAAAAAAABEAAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T00:20:16.042Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T00:20:16.042Z"
             },
             {
               "$type": "Document",
@@ -110,8 +103,7 @@
               "RelativeToolTip": "DataBase\\DetalleEstudiante.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T00:12:53.29Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T00:12:53.29Z"
             },
             {
               "$type": "Document",
@@ -123,8 +115,7 @@
               "RelativeToolTip": "DataBase\\InstitutoContext.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAxwBUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T23:42:39.046Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T23:42:39.046Z"
             },
             {
               "$type": "Document",
@@ -136,8 +127,7 @@
               "RelativeToolTip": "DataBase\\Profesor.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAqAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-02T23:57:06.087Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-02T23:57:06.087Z"
             },
             {
               "$type": "Document",
@@ -149,8 +139,11 @@
               "RelativeToolTip": "DataBase\\Materia.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-03T00:00:47.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-03T00:00:47.717Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
             }
           ]
         }
