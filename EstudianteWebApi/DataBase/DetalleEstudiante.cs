@@ -16,9 +16,9 @@ namespace DataBase
         public int MateriaId { get; set; }
         public int EstudianteId { get; set; }
         [ForeignKey("MateriaId")]
-        public virtual Materia Materia { get; set; }
+        public virtual Materia? Materia { get; set; }
         [ForeignKey("EstudianteId")]
-        public virtual Estudiante Estudiante { get; set; }
+        public virtual Estudiante? Estudiante { get; set; }
         
     }
 }

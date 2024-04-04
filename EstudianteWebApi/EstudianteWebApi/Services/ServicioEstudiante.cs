@@ -60,6 +60,24 @@ namespace EstudianteWebApi.Services
             }
         }
 
+        public bool Login(string correo, string password)
+        {
+            try
+            {
+                var valores = _context.Estudiantes
+                    .Where(d => d.Correo == correo && d.Password == password).Count();
+                if (valores > 0)
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+        }
+
         public async Task Save(Estudiante estudiante)
         {
             try

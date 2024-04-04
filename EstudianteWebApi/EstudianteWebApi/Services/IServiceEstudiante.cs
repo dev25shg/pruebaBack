@@ -10,5 +10,6 @@ namespace EstudianteWebApi.Services
         Task Update(int id, Estudiante estudiante);
         Task Delete(int id);
         Boolean Valida(int idestudiante, int idmateria);
+        Boolean Login(string correo, string password);
     }
 }

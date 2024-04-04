@@ -9,7 +9,7 @@ namespace EstudianteWebApi.Controllers
     [ApiController]
     public class EstudianteController : ControllerBase
     {
-
+        
         private IServiceEstudiante _service;
 
         public EstudianteController(IServiceEstudiante service)
@@ -34,7 +34,7 @@ namespace EstudianteWebApi.Controllers
             }
         }
 
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Put([FromBody] Estudiante estu, int id)
         {
             try
@@ -50,7 +50,7 @@ namespace EstudianteWebApi.Controllers
             
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
             try
@@ -66,6 +66,23 @@ namespace EstudianteWebApi.Controllers
 
         }
 
+        [HttpGet("{correo,pass}")]
+        public IActionResult Login(string correo, string pass) {
+            try
+            {
+                if (_service.Login(correo, pass))
+                    return Ok(true);
+                else
+                    return Ok(false);
+                
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
+        }
+        
 
     }
 }

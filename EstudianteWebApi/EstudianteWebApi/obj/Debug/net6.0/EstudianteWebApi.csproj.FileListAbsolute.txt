@@ -7,11 +7,13 @@ D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Estud
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\EstudianteWebApi.pdb
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\BouncyCastle.Cryptography.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Google.Protobuf.dll
+D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Humanizer.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\K4os.Compression.LZ4.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\K4os.Compression.LZ4.Streams.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\K4os.Hash.xxHash.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
@@ -69,5 +71,3 @@ D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\obj\Debug\net6.0\refin
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\obj\Debug\net6.0\EstudianteWebApi.pdb
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\obj\Debug\net6.0\EstudianteWebApi.genruntimeconfig.cache
 D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\obj\Debug\net6.0\ref\EstudianteWebApi.dll
-D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Humanizer.dll
-D:\Proyectos\pruebaBack\EstudianteWebApi\EstudianteWebApi\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

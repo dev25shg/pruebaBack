@@ -16,6 +16,6 @@ namespace DataBase
         public string Nombre { get; set; }
         public int ProfesorId { get; set; }
         [ForeignKey("ProfesorId")]
-        public virtual Profesor Profesor { get; set; }
+        public virtual Profesor? Profesor { get; set; }
     }
 }

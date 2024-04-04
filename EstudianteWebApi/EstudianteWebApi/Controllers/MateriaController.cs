@@ -9,6 +9,7 @@ namespace EstudianteWebApi.Controllers
     [ApiController]
     public class MateriaController : ControllerBase
     {
+        
         private IServiceMateria _service;
 
         public MateriaController (IServiceMateria service)
@@ -16,9 +17,9 @@ namespace EstudianteWebApi.Controllers
             _service = service;
         }
 
-
+        
         [HttpGet]
-        public ActionResult<List<Materia>> Get() 
+        public IActionResult Get() 
         {
             try
             {
@@ -30,9 +31,9 @@ namespace EstudianteWebApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-        [HttpGet]
-        public ActionResult<Materia> Get(int id)
+        
+        [HttpGet("{id}")]
+        public IActionResult Get(int id)
         {
             try
             {
@@ -44,9 +45,10 @@ namespace EstudianteWebApi.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
+        
+        
         [HttpPost]
-        public ActionResult<int> Post([FromBody] Materia entity) {
+        public IActionResult Post([FromBody] Materia entity) {
             try
             {
                 _service.Save(entity);
@@ -58,8 +60,8 @@ namespace EstudianteWebApi.Controllers
                 return Ok(2);
             }
         }
-
-        [HttpPut]
+        
+        [HttpPut("{id}")]
         public ActionResult<int> Put([FromBody] Materia entity, int id) {
             try
             {
@@ -72,6 +74,6 @@ namespace EstudianteWebApi.Controllers
                 return Ok(2);
             }
         }
-
+        
     }
 }

@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "kPmePmUBqLg97QUg453ADqjzhxH7RhUlwrsv/SRQCAxL0yEAnWg3JUIeztFQdLY2mRbrk0q/lZS++ON8QFDIXg==",
+  "dgSpecHash": "+WbRP7GxYP9wh5VpasDMbG+HepocDE8w9/aX/RPE1Hk1t3GNvcJOQDaFfZZJpVKV/JXJvyYXMfamVy8Tnf2+CQ==",
   "success": true,
   "projectFilePath": "D:\\Proyectos\\pruebaBack\\EstudianteWebApi\\EstudianteWebApi\\EstudianteWebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\sergi\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",
+    "C:\\Users\\sergi\\.nuget\\packages\\dapper\\2.1.35\\dapper.2.1.35.nupkg.sha512",
     "C:\\Users\\sergi\\.nuget\\packages\\google.protobuf\\3.25.1\\google.protobuf.3.25.1.nupkg.sha512",
     "C:\\Users\\sergi\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\sergi\\.nuget\\packages\\k4os.compression.lz4\\1.3.5\\k4os.compression.lz4.1.3.5.nupkg.sha512",

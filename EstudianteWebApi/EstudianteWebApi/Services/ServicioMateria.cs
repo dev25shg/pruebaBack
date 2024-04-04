@@ -1,14 +1,20 @@
-﻿using DataBase;
+﻿using Dapper;
+using DataBase;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using MySqlConnector;
+using Mysqlx;
 
 namespace EstudianteWebApi.Services
 {
     public class ServicioMateria : IServiceMateria
     {
         private InstitutoContext _context;
-        public ServicioMateria(InstitutoContext context)
+        private readonly IConfiguration _config;
+        public ServicioMateria(InstitutoContext context, IConfiguration config)
         {
             _context = context;
+            _config = config;
         }
         public async Task Delete(int id)
         {
@@ -20,7 +26,10 @@ namespace EstudianteWebApi.Services
                     _context.Materias.Remove(mate);
 
                     await _context.SaveChangesAsync();
+                    
                 }
+               
+                   
             }
             catch (Exception)
             {
@@ -29,11 +38,13 @@ namespace EstudianteWebApi.Services
             }
         }
 
-        public IEnumerable<Materia> Get()
+        public List<Materia> Get()
         {
             try
             {
-                return _context.Materias.ToList();
+                using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
+                var mate = connection.Query<Materia>("Select * from Materia");
+                return mate.ToList();
             }
             catch (Exception)
             {
@@ -46,9 +57,12 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                var det = _context.Materias.Find(id);
-                if (det != null)
-                    return det;
+                using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
+                var mate = connection.Query<Materia>("Select * from Materia where MateriaId = "+id+" ");
+
+                //var d = _context.Materias.Find(id);
+                if (mate != null)
+                    return (Materia)mate;
                 else
                     return new Materia();
             }
@@ -61,16 +75,18 @@ namespace EstudianteWebApi.Services
 
         public async Task Save(Materia materia)
         {
+            
             try
             {
                 _context.Materias.Add(materia);
                 await _context.SaveChangesAsync();
+               
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
                 throw;
-            }
+            } 
         }
 
         public async Task Update(int id, Materia materia)
@@ -86,7 +102,9 @@ namespace EstudianteWebApi.Services
 
                     //prof. = profesor.Nombre;
                     await _context.SaveChangesAsync();
+                    
                 }
+                                    
             }
             catch (Exception)
             {

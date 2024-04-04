@@ -15,10 +15,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IServiceEstudiante, ServicioEstudiante>();
-builder.Services.AddScoped<IServiceMateria, ServicioMateria>();
-builder.Services.AddScoped<IServiceProfesor, ServiceProfesor>();
-builder.Services.AddScoped<IservicioDetalle, ServicioDetalle>();
+builder.Services.AddScoped<IServiceEstudiante,ServicioEstudiante>();
+builder.Services.AddScoped<IServiceMateria,ServicioMateria>();
+builder.Services.AddScoped<IServiceProfesor,ServiceProfesor>();
+builder.Services.AddScoped<IservicioDetalle,ServicioDetalle>();
 
 builder.Services.AddDbContext<InstitutoContext>(options =>
 {    
