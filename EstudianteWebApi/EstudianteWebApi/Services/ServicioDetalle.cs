@@ -1,5 +1,8 @@
 ﻿using DataBase;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using MySqlConnector;
+using Dapper;
 
 namespace EstudianteWebApi.Services
 {
@@ -7,21 +10,20 @@ namespace EstudianteWebApi.Services
     public class ServicioDetalle : IservicioDetalle
     {
         private InstitutoContext _context;
-        public ServicioDetalle(InstitutoContext context)
+        private readonly IConfiguration _config;
+        public ServicioDetalle(InstitutoContext context, IConfiguration config)
         {
+            _config = config;
             _context = context;
         }
         public async Task Delete(int id)
         {
             try
             {
-                var deta = _context.DetalleEstudiantes.Find(id);
-                if (deta != null)
-                {
-                    _context.DetalleEstudiantes.Remove(deta);
-
-                    await _context.SaveChangesAsync();
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                    var mate = await connection.ExecuteAsync("Delete from DetalleEstudiante where DetalleId = @Id", new { Id = id});
                 }
+                
             }
             catch (Exception)
             {
@@ -30,12 +32,15 @@ namespace EstudianteWebApi.Services
             }
         }
 
-        public IEnumerable<DetalleEstudiante> Get(int id)
+        public IEnumerable<DetalleEstudiante> Get()
         {
             try
             {
-                return _context.DetalleEstudiantes
-                    .Where(d => d.EstudianteId == id).ToList();
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                var estudi = connection.Query<DetalleEstudiante>("Select * from DetalleEstudiante");
+                return estudi.ToList();
+                }
+                
             }
             catch (Exception)
             {
@@ -50,8 +55,10 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                _context.DetalleEstudiantes.Add(detest);
-                await _context.SaveChangesAsync();
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) 
+                {
+                    var mate = await connection.ExecuteAsync("Insert into DetalleEstudiante (MateriaId, EstudianteId) values (@mat, @est)", new { mat = detest.MateriaId, est= detest.EstudianteId});
+                }               
             }
             catch (Exception)
             {
@@ -64,16 +71,9 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                var det = _context.DetalleEstudiantes.Find(id);
-                if (det != null)
-                {
-                    det.EstudianteId = detest.EstudianteId;
-                    det.MateriaId = detest.MateriaId;
-                    det.Estudiante = detest.Estudiante;
-                    det.Materia = detest.Materia;
-                    
-                    await _context.SaveChangesAsync();
-                }
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                    var estu = await connection.ExecuteAsync("Update DetalleEstudiante Set MateriaId = @mid, EstudianteId = @eid where DetalleId = @Id", new { mid = detest.MateriaId, eid= detest.EstudianteId, Id =id});
+                }               
             }
             catch (Exception)
             {

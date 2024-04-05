@@ -1,27 +1,28 @@
 ﻿using DataBase;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using MySqlConnector;
+using Dapper;
 
 namespace EstudianteWebApi.Services
 {
     public class ServicioEstudiante : IServiceEstudiante
     {
-        private InstitutoContext _context;
-        public ServicioEstudiante(InstitutoContext context)
-        {
-            _context = context;
+        
+        private readonly IConfiguration _config;
+        public ServicioEstudiante(IConfiguration config)
+        {            
+            _config =config;
         }
         public async Task Delete(int id)
         {
             try
             {
-                var est = _context.Estudiantes.Find(id);
-                if (est != null)
-                {
-                    _context.Estudiantes.Remove(est);
-
-                    await _context.SaveChangesAsync();
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                    var mate = await connection.ExecuteAsync("Delete from Estudiante where EstudianteId = @Id", new { Id = id});
                 }
+                
+             
             }
             catch (Exception)
             {
@@ -34,7 +35,10 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                return _context.Estudiantes;
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                var estudi = connection.Query<Estudiante>("Select * from Estudiante");
+                return estudi.ToList();
+                }
             }
             catch (Exception)
             {
@@ -47,11 +51,15 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                var est = _context.Estudiantes.Find(id);
-                if (est != null)
-                    return est;
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                var estud = connection.Query<Estudiante>("Select * from Estudiante where EstudianteId = @mId ", new { mId = id});
+
+           
+                if (estud != null)
+                    return estud.FirstOrDefault();
                 else
                     return new Estudiante();
+                }
             }
             catch (Exception)
             {
@@ -64,12 +72,14 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                var valores = _context.Estudiantes
-                    .Where(d => d.Correo == correo && d.Password == password).Count();
-                if (valores > 0)
-                    return true;
-                else
-                    return false;
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                int estud = connection.ExecuteScalar<int>("Select count(*) from Estudiante where Correo = @Correo and Password = @Pass", new { Correo = correo, Pass= password});    
+                 if (estud>0) 
+                 return true;
+                 else
+                 return false;               
+                }          
+                    
             }
             catch (Exception)
             {
@@ -82,8 +92,10 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                _context.Estudiantes.Add(estudiante);
-                await _context.SaveChangesAsync();
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                    var mate = await connection.ExecuteAsync("Insert into Estudiante (Nombre, Correo, Password) values (@Nombre, @Correo, @Password)", new { Nombre = estudiante.Nombre, Correo= estudiante.Correo, Password=estudiante.Password});
+                }
+                
 
             }
             catch (Exception)
@@ -97,16 +109,10 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                var est = _context.Estudiantes.Find(id);
-                if (est != null)
-                {
-                    est.Nombre = estudiante.Nombre;
-                    est.Correo = estudiante.Correo;
-                    est.Password = estudiante.Password;
-                    
-                    //prof. = profesor.Nombre;
-                    await _context.SaveChangesAsync();
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                    var estu = await connection.ExecuteAsync("Update Estudiante Set Nombre = @Nombre, Correo = @Correo, Password= @Pass where EstudianteId = @Id", new { Nombre = estudiante.Nombre, Correo= estudiante.Correo, Pass= estudiante.Password, Id =id});
                 }
+               
             }
             catch (Exception)
             {
@@ -119,21 +125,15 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                //var profes = _context.Profesores.Where(q => q.)
-                var vali = true;
-                var detestu = _context.DetalleEstudiantes
-                    .Where(b => b.EstudianteId == idestudiante);
-                if (detestu != null)
-                {
-                    foreach (var est in detestu)
-                    {
-                        var profes = _context.Materias
-                            .Where(q => q.MateriaId == idmateria && q.ProfesorId == est.Materia.ProfesorId).Count();
-                        if (profes > 0)
-                            vali = false;
-                    }
+                
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                    int estud = connection.ExecuteScalar<int>("Select count(*) from DetalleEstudiante as d, Materias as m where d.EstudianteId = @eid and d.MateriaId = m.MateriaId and m.ProfesorId IN (select p.ProfesorId from Materia as m, Profesor as p where m.MateriaId = @mid and m.ProfesorId = p.ProfesorId ) ", new { eid = idestudiante, mid= idmateria});    
+                    if (estud>0)
+                    return false;
+                    else
+                    return true;
                 }
-                return vali; 
+                       
 
 
             }

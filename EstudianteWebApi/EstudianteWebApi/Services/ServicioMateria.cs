@@ -9,25 +9,20 @@ namespace EstudianteWebApi.Services
 {
     public class ServicioMateria : IServiceMateria
     {
-        private InstitutoContext _context;
+        
         private readonly IConfiguration _config;
-        public ServicioMateria(InstitutoContext context, IConfiguration config)
-        {
-            _context = context;
+        public ServicioMateria( IConfiguration config)
+        {            
             _config = config;
         }
         public async Task Delete(int id)
         {
             try
             {
-                var mate = _context.Materias.Find(id);
-                if (mate != null)
-                {
-                    _context.Materias.Remove(mate);
-
-                    await _context.SaveChangesAsync();
-                    
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
+                    var mate = await connection.ExecuteAsync("Delete from Materia where MateriaId = @Id", new { Id = id});
                 }
+               
                
                    
             }
@@ -42,9 +37,10 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
                 var mate = connection.Query<Materia>("Select * from Materia");
                 return mate.ToList();
+                }
             }
             catch (Exception)
             {
@@ -57,14 +53,15 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
                 var mate = connection.Query<Materia>("Select * from Materia where MateriaId = @mId ", new { mId = id});
 
-                //var d = _context.Materias.Find(id);
+                
                 if (mate != null)                 
                     return mate.FirstOrDefault();
                 else
                     return new Materia();
+                }
             }
             catch (Exception)
             {
@@ -78,10 +75,10 @@ namespace EstudianteWebApi.Services
             
             try
             {
-                using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
+               using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
                 var mate = await connection.ExecuteAsync("Insert into Materia (Nombre, ProfesorId) values (@Nombre, @ProfesorId)", new { Nombre = materia.Nombre, ProfesorId= materia.ProfesorId});
-               // _context.Materias.Add(materia);
-                //await _context.SaveChangesAsync();
+               }
+               
                
             }
             catch (Exception ex)
@@ -95,19 +92,9 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
+                using (var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"))) {
                 var mate = await connection.ExecuteAsync("Update Materia Set Nombre = @Nombre, ProfesorId = @ProfesorId where MateriaId = @MateriaId", new { Nombre = materia.Nombre, ProfesorId= materia.ProfesorId, MateriaId= materia.MateriaId});
-              /*  var mat = _context.Materias.Find(id);
-                if (mat != null)
-                {
-                    mat.Nombre = materia.Nombre;
-                    mat.ProfesorId = materia.ProfesorId;
-                    mat.Profesor = materia.Profesor;
-
-                    
-                    await _context.SaveChangesAsync();
-                    
-                }*/
+                }       
                                     
             }
             catch (Exception)
