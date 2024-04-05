@@ -58,11 +58,11 @@ namespace EstudianteWebApi.Services
             try
             {
                 using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
-                var mate = connection.Query<Materia>("Select * from Materia where MateriaId = "+id+" ");
+                var mate = connection.Query<Materia>("Select * from Materia where MateriaId = @mId ", new { mId = id});
 
                 //var d = _context.Materias.Find(id);
-                if (mate != null)
-                    return (Materia)mate;
+                if (mate != null)                 
+                    return mate.FirstOrDefault();
                 else
                     return new Materia();
             }
@@ -78,8 +78,10 @@ namespace EstudianteWebApi.Services
             
             try
             {
-                _context.Materias.Add(materia);
-                await _context.SaveChangesAsync();
+                using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
+                var mate = await connection.ExecuteAsync("Insert into Materia (Nombre, ProfesorId) values (@Nombre, @ProfesorId)", new { Nombre = materia.Nombre, ProfesorId= materia.ProfesorId});
+               // _context.Materias.Add(materia);
+                //await _context.SaveChangesAsync();
                
             }
             catch (Exception ex)
@@ -93,17 +95,19 @@ namespace EstudianteWebApi.Services
         {
             try
             {
-                var mat = _context.Materias.Find(id);
+                using var connection = new MySqlConnection(_config.GetConnectionString("InstitutoConection"));
+                var mate = await connection.ExecuteAsync("Update Materia Set Nombre = @Nombre, ProfesorId = @ProfesorId where MateriaId = @MateriaId", new { Nombre = materia.Nombre, ProfesorId= materia.ProfesorId, MateriaId= materia.MateriaId});
+              /*  var mat = _context.Materias.Find(id);
                 if (mat != null)
                 {
                     mat.Nombre = materia.Nombre;
                     mat.ProfesorId = materia.ProfesorId;
                     mat.Profesor = materia.Profesor;
 
-                    //prof. = profesor.Nombre;
+                    
                     await _context.SaveChangesAsync();
                     
-                }
+                }*/
                                     
             }
             catch (Exception)
