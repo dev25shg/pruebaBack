@@ -2,6 +2,7 @@
 using EstudianteWebApi.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using EstudianteWebApi.Models;
 
 namespace EstudianteWebApi.Controllers
 {
@@ -21,11 +22,12 @@ namespace EstudianteWebApi.Controllers
         public IEnumerable<Estudiante> Get() => _service.Get();
 
         [HttpPost]
-        public ActionResult Post([FromBody] Estudiante estu) {
+        [Route("Save")]
+        public IActionResult Post([FromBody] Estudiante estu) {
             try
             {
                 _service.Save(estu);
-                return Ok();
+                return Ok(estu);
             }
             catch (Exception ex)
             {
@@ -66,20 +68,20 @@ namespace EstudianteWebApi.Controllers
 
         }
 
-        [HttpGet("{correo,pass}")]
-        public IActionResult Login(string correo, string pass) {
+        [HttpPost]
+        [Route("Login")]
+        public IActionResult Login([FromBody] Logueo reg) {
             try
             {
-                if (_service.Login(correo, pass))
+                if (_service.Login(reg.Correo, reg.Password))
                     return Ok(true);
                 else
-                    return Ok(false);
-                
+                    return Ok(false);                
             }
-            catch (Exception)
+            catch (Exception ex) 
             {
 
-                return BadRequest();
+                return BadRequest(ex.Message);
             }
         }
         

@@ -6,8 +6,20 @@ using Microsoft.Extensions.Configuration;
 using EstudianteWebApi.Services;
 //using MySQL.Data.EntityFrameworkCore.Extensions;
 
+var  MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("NuevaPolitica",
+                      policy  =>
+                      {
+                          policy.AllowAnyOrigin()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod();
+                      });
+});
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -41,8 +53,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
+//app.UseStaticFiles();
+//app.UseRouting();
 
+app.UseCors("NuevaPolitica");
 app.UseAuthorization();
 
 app.MapControllers();
